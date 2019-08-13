@@ -10,7 +10,7 @@ User.destroy_all
 Event.destroy_all
 Attendance.destroy_all
 
-30.times do
+1.times do
 	firstname = Faker::Name.first_name
 	lastname = Faker::Name.last_name
 	User.create!(first_name: firstname, last_name: lastname, description: Faker::Quote.famous_last_words, encrypted_password: Faker::Internet.password(min_length: 8), email: "#{lastname}.#{firstname}@yopmail.com")
@@ -19,7 +19,7 @@ Attendance.destroy_all
 
 end
 
-100.times do 
+1.times do 
 
 	Attendance.create!(stripe_customer_id: "STR#{Faker::Number.number(digits: 10)}", event: Event.all.sample, participant: User.all.sample)
 
