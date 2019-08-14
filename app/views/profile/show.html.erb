@@ -1,0 +1,33 @@
+<% if user_signed_in? %>
+  
+
+    <div class="container text-center">
+          <h1>MY PROFILE</h1>
+          </br>
+          </br>
+
+        <div class="card">
+          <div class="card-body">
+              <h3 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h3>
+              <p class="card-text">
+                <%= current_user.description %>
+                </br>Email : <%= current_user.email %>
+                </br>
+                <%= link_to "Edit email / password", edit_user_registration_path %>
+              </p>
+              
+                      
+           </div>  
+        </div>
+    </div>
+
+
+  <% else %>
+  
+    </br></br></br></br></br></br></br>
+    <h1 class="h1 mb-3 font-weight-normal text-center">WELCOME TO OUR WEBSITE !</h1>
+    </br></br>
+    <h4 class="h3 mb-3 font-weight-normal text-center">PLEASE REGISTER, OR LOG IN IF YOU ALREADY HAVE AN ACCOUNT !</h4>
+
+    
+  <% end %>

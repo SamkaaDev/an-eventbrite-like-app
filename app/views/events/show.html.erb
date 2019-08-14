@@ -3,18 +3,20 @@
   
 
 <div class="container text-center">
-      <h1>My Profile </h1>
+	 </br> </br> </br> </br>
+      <h1>EVENT</h1>
       </br>
       </br>
 
     <div class="card">
       <div class="card-body">
-          <h3 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h3>
+          <h3 class="card-title"><%= @event.title %></h3>
           <p class="card-text">
-            <%= current_user.description %>
-            </br>Email : <%= current_user.email %>
-            </br>
-            <%= link_to "Edit email / password", edit_user_registration_path %>
+            Description : <%= @event.description %>
+            </br>Date : <%= @event.start_date %>
+            </br>Price : <%= @event.price %> €
+        	</br>Location : <%= @event.location %> 
+        	</br>Created by : <%= link_to "#{@event.administrator.first_name} #{@event.administrator.last_name}", profile_path(@event.administrator.id) %> 
           </p>
           
                   
@@ -23,6 +25,7 @@
 
 
 <% else %>
+
     </br></br></br></br></br></br></br>
     <h1 class="h1 mb-3 font-weight-normal text-center">WELCOME TO OUR WEBSITE !</h1>
     </br></br>
@@ -30,4 +33,3 @@
 
     
   <% end %>
-

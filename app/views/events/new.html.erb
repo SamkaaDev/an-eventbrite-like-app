@@ -1,2 +1,61 @@
-<h1>Events#new</h1>
-<p>Find me in app/views/events/new.html.erb</p>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6 col-md-6 mt-5">
+        <br/>
+        <br/>
+
+			<h1 class="h3 mb-3 font-weight-normal text-center">NEW EVENT</h1>
+			<br/> <br/>
+			
+
+		<%= form_for @event, url: {action: "create"} do |f| %>
+
+        <div class="form-group">
+
+          <%= f.text_field :title, autocomplete: "title", class: "form-control", placeholder:"Title", required: true %>
+        </div><br/> <br/>
+
+
+        <div class="form-group">
+
+          <%= f.text_area :description, autofocus: true, autocomplete: "description", class: "form-control", placeholder:"Description", required: true %>
+        </div><br/> <br/>
+	      
+
+        <div class="form-group">
+
+          <%= f.number_field :price, class: "form-control", placeholder:"Price (€)", required: true %>
+        </div><br/> <br/>
+
+
+        <div class="form-group">
+
+         <%= f.datetime_local_field :start_date , class: "form-control" %>
+        </div><br/> <br/>
+
+
+        <div class="form-group">
+
+          <%= f.number_field :duration, class: "form-control", placeholder:"Duration (minutes)", required: true %>
+        </div><br/> <br/>
+
+        <div class="form-group">
+
+          <%= f.text_field :location, class: "form-control", placeholder:"Place", required: true %>
+        </div>
+	     
+
+
+		<div class="actions mt-5">
+          <%= f.submit "CREATE EVENT", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+
+
+
+			<%= link_to 'Back', events_path %>
+<% end %>
+
+
+		</div>
+    </div>
+  </div>

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  root 'users#show'
+ 
+  root 'events#index'
 
-  get 'events/index'
-  get 'events/new'
-  post 'events/create'
-  get 'static_pages/index'
-  get 'static_pages/secret'
+
+  resources :events
   devise_for :users
+
+  resources :profile, only: [:show]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

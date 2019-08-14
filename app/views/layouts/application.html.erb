@@ -29,10 +29,10 @@
         <a class="navbar-brand" href="#">EVENTBRITE-LIKE</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <%= link_to 'Home', events_index_path, class: "nav-link" %>
+            <%= link_to 'Home', events_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'New Event', events_new_path, class: "nav-link" %>
+            <%= link_to 'New Event', new_event_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
@@ -58,15 +58,15 @@
         <a class="navbar-brand" href="#">EVENTBRITE-LIKE</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
-            <%= link_to 'Home', events_index_path, class: "nav-link" %>
+            <%= link_to 'Home', events_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to 'New Event', events_new_path, class: "nav-link" %>
+            <%= link_to 'New Event', new_event_path, class: "nav-link" %>
           </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
           <li class="nav-item">
-          <%= link_to 'MY PROFILE', users_show_path(current_user.id), class: "nav-link btn mr-1" %>
+          <%= link_to 'MY PROFILE', profile_path(current_user.id), class: "nav-link btn mr-1" %>
           </li>
           <li class="nav-item">
           <%= link_to 'LOG OUT', destroy_user_session_path(session[:user_id]), method: :delete, data: {confirm: 'Êtes-vous sûr de vous déconnecter ?'}, class: "nav-link btn btn-outline-danger" %> 
