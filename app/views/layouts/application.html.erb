@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AnEventbriteLikeApp</title>
+    <title>The Eventbrite-Like</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,95 @@
   </head>
 
   <body>
+
+
+
+
+
+
+<!-------------------------- NAV BAR -------------------------->
+
+  <% if !current_user%> 
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">EVENTBRITE-LIKE</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <%= link_to 'Home', events_index_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'New Event', events_new_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+          <%= link_to 'SIGN UP', new_user_registration_path, class: "nav-link btn mr-1" %>
+          </li>
+          <li class="nav-item">
+           <%=link_to 'LOG IN', new_user_session_path, class: "nav-link btn btn-outline-light" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+  <% else %>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#">EVENTBRITE-LIKE</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <%= link_to 'Home', events_index_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'New Event', events_new_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+          <li class="nav-item">
+          <%= link_to 'MY PROFILE', users_show_path(current_user.id), class: "nav-link btn mr-1" %>
+          </li>
+          <li class="nav-item">
+          <%= link_to 'LOG OUT', destroy_user_session_path(session[:user_id]), method: :delete, data: {confirm: 'Êtes-vous sûr de vous déconnecter ?'}, class: "nav-link btn btn-outline-danger" %> 
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <%= yield %>
+     <!-------------------------- SCRIPT -------------------------->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
