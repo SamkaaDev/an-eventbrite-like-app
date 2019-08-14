@@ -1,11 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##################################
+############# README #############
+##################################
+
+#INFORMATION A L'ATTENTION DU CORRECTEUR#
+
+L'application présentée est fonctionnelle, mais cependant non aboutie par manque de temps.
+Projet : Eventbrite : Devise et premières views ;
+Les étapes accomplies sont :
+
+-> installer Devise sur l'application, et brancher le model User à Devise
+-> brancher Bootstrap à ton application
+-> faire un header qui comprend les liens importants de l'application, puis le mettre pour toutes les vues de l'application
+-> faire la page profil d'un utilisateur (contenu très léger)
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 
 
 * System dependencies
 
