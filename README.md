@@ -15,7 +15,7 @@ Les étapes accomplies sont :
 -> faire un header qui comprend les liens importants de l'application, puis le mettre pour toutes les vues de l'application
 -> faire la page profil d'un utilisateur (contenu très léger)
 
-la page d'accueil, la page de création d'un event et la page d'affichage d'un event sont liées (controllers/views/routes) mais ne sont pas remplies.
+la page d'accueil, la page de création d'un event et la page d'affichage d'un event sont liées (controllers/views/routes) mais ne sont pas remplies..
 
 
 
