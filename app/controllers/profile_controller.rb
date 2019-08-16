@@ -1,6 +1,7 @@
 class ProfileController < ApplicationController
 		before_action :authenticate_user!, only: [:show, :create, :update]
   def show
+    @user = User.all.find(params[:id])
   end
 
   def edit

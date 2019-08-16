@@ -50,7 +50,14 @@
 					<div class="card text-center" style="width: 18rem;">
 						<div class="card-body">
 					  		 <h5 class="card-title"><%=event.title%> </h5>
-					  		 <p class="card-text"><%=event.description %></p>
+					  		 <%if current_user == event.administrator%>
+					  		 <span class="badge badge-pill badge-info">admin</span>
+					  		 <%elsif event.participants.include?(current_user)%>
+					  		 <span class="badge badge-pill badge-success">participate</span>
+					  		 <%else%>
+					  		 <br/>
+					  		 <%end%>
+					  		 <p class="card-text">Date : <%=event.start_date.strftime("%F") %></p>
 					  		 <p class="card-text"><%= link_to "#{event.administrator.first_name}", profile_path(event.administrator.id) %></p>
 					  		 <%=link_to 'SHOW EVENT', event_path(event.id), class:"btn btn-outline-info" %>
 						</div>

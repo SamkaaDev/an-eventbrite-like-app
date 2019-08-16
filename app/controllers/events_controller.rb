@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :show]
 
   def index
+
   end
 
   def new
@@ -29,6 +30,7 @@ class EventsController < ApplicationController
 
     @id = params[:id]
     @event = Event.all.find(@id)
+    @attendance = Attendance.find_by(event_id: @event.id, participant_id: current_user.id)
   	
   end
 

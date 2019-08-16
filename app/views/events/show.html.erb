@@ -3,7 +3,7 @@
   
 
 <div class="container text-center">
-	 </br> </br> </br> </br>
+	 </br> </br>
       <h1>EVENT</h1>
       </br>
       </br>
@@ -17,6 +17,12 @@
             </br>Price : <%= @event.price %> €
         	</br>Location : <%= @event.location %> 
         	</br>Created by : <%= link_to "#{@event.administrator.first_name} #{@event.administrator.last_name}", profile_path(@event.administrator.id) %> 
+          </br></br>
+          <%if current_user != @event.administrator && @attendance == nil %>
+          <%=link_to 'PARTICIPATE', new_event_attendance_path(@event.id), class:"btn btn-outline-success" %>
+          <%elsif current_user == @event.administrator%>
+          <%=link_to 'SHOW ATTENDANCES', event_attendances_path(@event.id), class:"btn btn-outline-success" %>
+          <%end%>
           </p>
           
                   
