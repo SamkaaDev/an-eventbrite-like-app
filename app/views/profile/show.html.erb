@@ -10,10 +10,12 @@
           <div class="card-body">
               <h3 class="card-title"><%= current_user.first_name %> <%= current_user.last_name %></h3>
               <p class="card-text">
-                <%= current_user.description %>
+                </br>Description : <%= current_user.description %>
                 </br>Email : <%= current_user.email %>
                 </br>
                 <%= link_to "Edit email / password", edit_user_registration_path %>
+                </br>
+                <%= link_to "Edit profile", edit_profile_path %>
               </p>
               
                       
